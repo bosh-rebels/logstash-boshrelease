@@ -7,9 +7,7 @@ JOB_DIR=/var/vcap/jobs/logstash
 PIDFILE=$RUN_DIR/logstash.pid
 RUNAS=vcap
 
-export JAVA_HOME=/var/vcap/packages/java
-export PATH=$PATH:$JAVA_HOME/bin
-
+source /var/vcap/packages/openjdk-11/bosh/runtime.env
 source /var/vcap/jobs/logstash/bin/ctl_utils.sh
 
 case $1 in
