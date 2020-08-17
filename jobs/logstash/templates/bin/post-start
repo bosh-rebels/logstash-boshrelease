@@ -2,7 +2,7 @@
 # Inspired by https://github.com/cloudfoundry/exemplar-release/blob/master/jobs/paragon/templates/post-start
 # If a command fails, exit immediately
 set -e
-source /var/vcap/packages/python2.7/bosh/runtime.env
+source /var/vcap/packages/python-2.7/bosh/runtime.env
 
 export timeout=200
 export polling_frequency=1
