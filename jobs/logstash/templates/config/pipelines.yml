@@ -31,7 +31,7 @@
     output {
       elasticsearch {
         hosts => <%= elasticsearch_nodes %>
-        index => "%{[logMessage][app.org]}-%{[logMessage][app.space]}-%{+YYYY.MM.dd}"
+        index => "%{[logMessage][app][org]}-%{[logMessage][app][space]}-%{+YYYY.MM.dd}"
         #user => "elastic"
         #password => "changeme"
       }
