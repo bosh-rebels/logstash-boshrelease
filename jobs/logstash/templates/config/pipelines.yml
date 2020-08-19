@@ -7,8 +7,8 @@
   end
 
   elasticsearch_nodes = []
-  if_link("elasticsearch") do |elasticsearch_nodes| 
-    elasticsearch_nodes.instances.each do |instance|
+  if_link("elasticsearch") do |elasticsearch_link| 
+    elasticsearch_link.instances.each do |instance|
       elasticsearch_nodes << "http://#{instance.address}:9200"
     end
   end
