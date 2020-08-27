@@ -22,7 +22,7 @@ packages:
 
 consumes:
 - name: kafka
-  type: kafka
+  type: conn
   optional: true
 
 - name: elasticsearch
