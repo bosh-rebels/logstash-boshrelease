@@ -14,28 +14,6 @@
   end
 %>
 
-- pipeline.id: platform-app-logs
-  path.config: "/var/vcap/jobs/logstash/config/conf.d/platform-app-logs/*.conf"
-  all: |
-    input {
-      kafka {
-        bootstrap_servers => <%= kafka_brokers.join(',') %>
-        client_id => "payment"
-        group_id => "payment"
-        consumer_threads => 3
-        topics => ["aws-dublin-development1-app-logs"]
-        codec => "json"
-      }
-    }
-
-    output {
-      elasticsearch {
-        hosts => <%= elasticsearch_nodes %>
-        index => "test-index-%{+YYYY.MM.dd}"
-        #user => "elastic"
-        #password => "changeme"
-      }
-    }
 <% p("logstash.pipelines", []).each do |pipeline| %>
 - pipeline.id: <%= pipeline["name"] %>
   path.config: "/var/vcap/jobs/logstash/config/conf.d/<%= pipeline['name'] %>/*.conf"
