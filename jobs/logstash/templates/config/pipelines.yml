@@ -18,7 +18,7 @@
   config.string: |
     input {
       kafka {
-        bootstrap_servers => <%= kafka_brokers.join(',') %>
+        bootstrap_servers => <%= kafka_brokers.join(',').to_s %>
         client_id => "payment"
         group_id => "payment"
         consumer_threads => 3
