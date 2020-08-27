@@ -23,7 +23,7 @@
         client_id => "payment"
         group_id => "payment"
         consumer_threads => 3
-        topics => ["platform-app-logs"]
+        topics => ["aws-dublin-development1-app-logs"]
         codec => "json"
       }
     }
@@ -31,7 +31,7 @@
     output {
       elasticsearch {
         hosts => <%= elasticsearch_nodes %>
-        index => "%{[logMessage][app][org]}-%{[logMessage][app][space]}-%{+YYYY.MM.dd}"
+        index => "test-index-%{+YYYY.MM.dd}"
         #user => "elastic"
         #password => "changeme"
       }
