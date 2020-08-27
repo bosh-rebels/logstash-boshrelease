@@ -15,7 +15,7 @@
 %>
 
 - pipeline.id: platform-app-logs
-  config.string: |-
+  config.string: |
     input {
       kafka {
         bootstrap_servers => <%= kafka_brokers.join(',') %>
