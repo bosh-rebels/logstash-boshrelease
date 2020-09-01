@@ -22,7 +22,9 @@
         client_id => "payment"
         group_id => "payment"
         consumer_threads => 3
-        topics => ["aws-dublin-development1-app-logs"]
+        <% if_p('logstash.kafka.topic') do |topic| %> 
+        topics => ["<%= topic %>"]
+        <% end %>
         codec => "json"
       }
     }
@@ -30,7 +32,9 @@
     output {
       elasticsearch {
         hosts => <%= elasticsearch_nodes %>
-        index => "test-index-%{+YYYY.MM.dd}"
+        <% if_p('logstash.kafka.indexpattern') do |indexpattern| %> 
+        index => "<%=indexpattern %>-%{+YYYY.MM.dd}"
+        <% end %>
         #user => "elastic"
         #password => "changeme"
       }

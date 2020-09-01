@@ -27,6 +27,9 @@ instance_groups:
         - name: bosh
           config: 
             all: ((logstash.conf))
+        kafka:
+          topic: test
+          indexpattern: "test-index"
   instances: 1
   stemcell: xenial
   azs: [z1]
