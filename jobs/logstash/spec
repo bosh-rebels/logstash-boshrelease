@@ -104,5 +104,5 @@ properties:
     description: "Additional options to append to logstash.yml (YAML format)."
   logstash.kafka.topic:
     description: "Kafka topic messages will be pulled from."
-  logstash.kafka.indexpattern
+  logstash.kafka.indexpattern:
     description: "Index pattern that would be created in Kibana."
