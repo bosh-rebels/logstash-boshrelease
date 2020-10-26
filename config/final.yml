@@ -4,5 +4,3 @@ blobstore:
   options:
     bucket_name: logstash-boshrelease-blobstore
     region: eu-west-2
-    host: s3-eu-west-2.amazonaws.com
-
