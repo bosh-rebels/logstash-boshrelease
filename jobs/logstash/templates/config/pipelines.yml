@@ -35,8 +35,8 @@
         <% if_p('logstash.kafka.indexpattern') do |indexpattern| %> 
         index => "<%=indexpattern %>-%{+YYYY.MM.dd}"
         <% end %>
-        #user => "elastic"
-        #password => "changeme"
+        user => "<%= p('elasticsearch.username') %>"
+        password => "<%= p('elasticsearch.password') %>"
       }
     }
 

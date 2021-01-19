@@ -98,8 +98,10 @@ properties:
     default: "9200"
   elasticsearch.username:
     description: "The username of basic authentication on Elasticsearch"
+    default: ""
   elasticsearch.password:
     description: "The password of basic authentication on Elasticsearch"
+    default: ""
   logstash.config_options:
     description: "Additional options to append to logstash.yml (YAML format)."
   logstash.kafka.topic:
