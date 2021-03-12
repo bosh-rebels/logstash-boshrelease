@@ -9,7 +9,7 @@
   elasticsearch_nodes = []
   if_link("elasticsearch") do |elasticsearch_link| 
     elasticsearch_link.instances.each do |instance|
-      elasticsearch_nodes << "http://#{instance.address}:9200"
+      elasticsearch_nodes << "#{elasticsearch_link.p('elasticsearch.client.protocol')}://#{instance.address}:9200"
     end
   end
 %>
