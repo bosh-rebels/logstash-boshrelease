@@ -31,6 +31,7 @@
 
     output {
       elasticsearch {
+        ssl_certificate_verification = false
         hosts => <%= elasticsearch_nodes %>
         <% if_p('logstash.kafka.indexpattern') do |indexpattern| %> 
         index => "<%=indexpattern %>-%{+YYYY.MM.dd}"
